@@ -30,23 +30,24 @@ public class Principal extends javax.swing.JFrame {
     
     public void analizar(){
         String entrada = jTextPane1.getText();
-        AnalizadorLexico analizadorLexico = new AnalizadorLexico(new StringReader(entrada));
+//        AnalizadorLexico analizadorLexico = new AnalizadorLexico(new StringReader(entrada));
+        AnalizadorLexico2 analizadorLexico = new AnalizadorLexico2(new StringReader(entrada));
         
         try {
             while (analizadorLexico.yylex() != AnalizadorLexico.YYEOF) {}
 //            analizadorLexico.yylex();
             
-            List<String> lista = new ArrayList<>();
-            List<String> listaErrores = new ArrayList<>();
-            lista = analizadorLexico.getLista();
-            listaErrores = analizadorLexico.getListaErrores();
-            for (String token : lista) {
-                System.out.println(token);
-            }
-            
-            for (String error : listaErrores) {
-                System.out.println(error);
-            }
+//            List<String> lista = new ArrayList<>();
+//            List<String> listaErrores = new ArrayList<>();
+//            lista = analizadorLexico.getLista();
+//            listaErrores = analizadorLexico.getListaErrores();
+//            for (String token : lista) {
+//                System.out.println(token);
+//            }
+//            
+//            for (String error : listaErrores) {
+//                System.out.println(error);
+//            }
             
             
         } catch (Exception e) {
